@@ -17,6 +17,7 @@ public class DaysInMonth {
 				month = Integer.parseInt(_month);
 				if(1 <= month && month <= 12) check = true;
 			} catch (NumberFormatException e) {
+				//check all possible cases
 				if(_month.equals("January") || _month.equals("Jan")
 						|| _month.equals("Febuary") || _month.equals("Feb") || _month.equals("Feb.")
 						|| _month.equals("March")|| _month.equals("Mar")|| _month.equals("Mar.")
