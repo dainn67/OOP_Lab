@@ -11,6 +11,7 @@ public class DaysInMonth {
 		int month = 0;
 		String _month;
 		
+		//check if the input is valid or not: January, 
 		do {
 			_month = keyboard.nextLine();
 			try {				
@@ -33,7 +34,6 @@ public class DaysInMonth {
 						) check = true;
 			}
 		} while (!check);
-		
 		
 		System.out.print("Enter year: ");
 		int year = keyboard.nextInt();

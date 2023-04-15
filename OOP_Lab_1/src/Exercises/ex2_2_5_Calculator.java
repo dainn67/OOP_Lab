@@ -23,10 +23,12 @@ public class ex2_2_5_Calculator {
 		
 		if(n2 != 0) {
 			quotient = n1/n2;
-			resString = "Sum: " + sum + "\nDifference: " + difference + "\nProduct: " + product + "\nQuotient: " + quotient;
+			resString = "Sum: " + sum + "\nDifference: " + difference + "\nProduct: " + product + 
+					"\nQuotient: " + quotient;
 		}
 		else {
-			resString = "Sum: " + sum + "\nDifference: " + difference + "\nProduct: " + product + "\nQuotient: Second number is 0, can not divide";
+			resString = "Sum: " + sum + "\nDifference: " + difference + "\nProduct: " + product +
+					"\nQuotient: Second number is 0, can not divide";
 		}
 		
 		

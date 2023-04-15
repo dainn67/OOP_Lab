@@ -3,7 +3,7 @@ package Exercises;
 import java.util.Scanner;
 
 public class ex2_2_6_Equation {
-	void linear_equation_1var(Scanner sc) {
+	void linear_equation(Scanner sc) {
 		double a, b;
 		System.out.println("Linear equation: ax + b = 0");
 		System.out.print("Enter a: ");
@@ -20,7 +20,7 @@ public class ex2_2_6_Equation {
 		}
 	}
 	
-	void linear_equation_2vars(Scanner sc) {
+	void linear_system(Scanner sc) {
 		double a11, a12, a21, a22, b1, b2;
 		System.out.println("\n\na11x1 + a12x2 = b1, a21x1 + a22x2 = b2");
 		System.out.print("Enter a11: ");
@@ -44,7 +44,7 @@ public class ex2_2_6_Equation {
 			System.out.println("Solution:\nx1 = " + Dx/D + "\nx2 = " + Dy/D);
 		}else {
 			if(Dx != 0 && Dy != 0) System.out.println("No solution");
-			else if(Dx == 0 && Dy == 0) System.out.println("Solution\nall x satisfy: " + a11 + "x1 + " + a12 + "x2 = " + b1);
+			else if(Dx == 0 && Dy == 0) System.out.println("Solution\nall x satisfy: " + a11 + "x1 + " + a12 +"x2 = " + b1);
 		}
 	}
 	
@@ -61,15 +61,16 @@ public class ex2_2_6_Equation {
 		double delta = b * b - 4 * a * c;
 		if(delta < 0) System.out.println("No solution");
 		else if(delta == 0) System.out.println("Solution: x = " + (-b/(2 * a)));
-		else System.out.println("Solution\nx1 = " + ((-b - Math.sqrt(delta))/(2 * a)) + "\nx2 = " + ((-b + Math.sqrt(delta))/(2 * a)));
+		else System.out.println("Solution\nx1 = " + ((-b - Math.sqrt(delta))/(2 * a)) +
+				"\nx2 = " + ((-b + Math.sqrt(delta))/(2 * a)));
 	}
 	
 	public static void main(String[] args) {
 		ex2_2_6_Equation equation = new ex2_2_6_Equation();
 		Scanner scanner = new Scanner(System.in);
 		//
-		equation.linear_equation_1var(scanner);
-		equation.linear_equation_2vars(scanner);
+		equation.linear_equation(scanner);
+		equation.linear_system(scanner);
 		equation.second_degree_equation(scanner);
 		
 		
