@@ -1,4 +1,4 @@
-# OOP_Lab
+# OOP_Lab_Instruction
 
 Hello teacher, teaching assistant and everyone here for the project.
 You can find enclosed exercises in the scr/Exercises of each week
