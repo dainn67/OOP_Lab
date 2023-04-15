@@ -1,7 +1,7 @@
 package Exercises;
 import java.util.Scanner;
 
-public class Star_Pyramid {
+public class HeightOfnStars {
     public static void main(String[] args) {
     	Scanner scanner = new Scanner(System.in);
     	

@@ -2,7 +2,7 @@ package Exercises;
 
 import java.util.Scanner;
 
-public class Equation {
+public class ex2_2_6_Equation {
 	void linear_equation_1var(Scanner sc) {
 		double a, b;
 		System.out.println("Linear equation: ax + b = 0");
@@ -65,7 +65,7 @@ public class Equation {
 	}
 	
 	public static void main(String[] args) {
-		Equation equation = new Equation();
+		ex2_2_6_Equation equation = new ex2_2_6_Equation();
 		Scanner scanner = new Scanner(System.in);
 		//
 		equation.linear_equation_1var(scanner);

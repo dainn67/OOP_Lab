@@ -2,7 +2,7 @@ package Exercises;
 
 import javax.swing.JOptionPane;
 
-public class Calculator {
+public class ex2_2_5_Calculator {
 	public static void main(String[] args) {
 		String s1, s2;
 
