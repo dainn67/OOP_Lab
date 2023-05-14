@@ -26,11 +26,5 @@ public class Aim {
 		DigitalVideoDisc dvdTmp = new DigitalVideoDisc("ALadin");
 		anOrderCart.removeDigitalVideoDisc(dvdTmp);
 		anOrderCart.print();
-		
-		anOrderCart.searchById(2);
-		anOrderCart.searchById(5);
-		
-		anOrderCart.searchByTitle("The Lion King");
-		anOrderCart.searchByTitle("Toy Story");
 	}
 }
