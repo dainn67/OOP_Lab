@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author homesweethome
+ *
+ */
+module OtherProjects {
+}
