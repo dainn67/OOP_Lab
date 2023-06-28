@@ -3,30 +3,45 @@ package hust.soict.ict.aims.cart;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import javax.naming.LimitExceededException;
+import hust.soict.ict.aims.exception.EmptyException;
+import hust.soict.ict.aims.exception.NotExistedException;
 import hust.soict.ict.aims.media.DigitalVideoDisc;
 import hust.soict.ict.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
 	private static final int MAX_NUMBERS_ORDERED = 20;
 	private ArrayList<Media> itemsOrdered = new ArrayList<>();
+	private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
-	public void addMedia(Media media) {
+	public ObservableList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
+
+	public void addMedia(Media media)  throws LimitExceededException {
 		if (itemsOrdered.size() < MAX_NUMBERS_ORDERED) {
 			itemsOrdered.add(media);
 			System.out.println("Media added");
 		} else {
 			System.out.println("Cart is full!");
+			throw new LimitExceededException("Error: Maximum size of items reach");
 		}
 	}
 
-	public void removeMedia(Media media) {
-		if (itemsOrdered.isEmpty())
+	public void removeMedia(Media media) throws EmptyException, NotExistedException  {
+		if (itemsOrdered.isEmpty()){
 			System.out.println("Cart is empty!");
-		else if (!itemsOrdered.contains(media))
+			throw new EmptyException("Cart is empty!");
+		}
+		else if (!itemsOrdered.contains(media)){
 			System.out.println("Media not found");
+			throw new NotExistedException("Media not found");
+		}
 		else {
-			itemsOrdered.remove(media);
 			System.out.println("Media removed");
+			itemsOrdered.remove(media);
 		}
 	}
 
@@ -86,5 +101,14 @@ public class Cart {
 				return media;
 		}
 		return null;
+	}
+
+	public void placeOrder() {
+		if (itemsOrdered.size() > 0) {
+			System.out.println("Cart ordered");
+			itemsOrdered.clear();
+		} else {
+			System.out.println("No items in the cart.");
+		}
 	}
 }

@@ -1,6 +1,7 @@
 package hust.soict.ict.aims.media;
 
 import java.util.Comparator;
+import hust.soict.ict.aims.exception.NegativeException;
 
 public abstract class Media {
 	public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
@@ -18,7 +19,10 @@ public abstract class Media {
 		this.title = title;
 	}
 
-	public Media(int id, String title, String category, float cost) {
+	public Media(int id, String title, String category, float cost) throws NegativeException {
+		if (cost < 0) {
+	        throw new NegativeException("Invalid cost");
+	    }
 		this.id = id;
 		this.title = title;
 		this.category = category;
@@ -47,8 +51,12 @@ public abstract class Media {
 			return true;
 
 		//if not an instance of Media
-		if (o == null || !(o instanceof Media))
-			return false;
+		if (o == null)
+			throw new NullPointerException("Null object");
+
+		if (!(o instanceof Media)) {
+	        throw new ClassCastException("Invalid instance");
+	    }
 
 		//cast and compare
 		Media media = (Media) o;

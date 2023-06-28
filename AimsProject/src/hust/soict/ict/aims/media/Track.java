@@ -1,5 +1,7 @@
 package hust.soict.ict.aims.media;
 
+import hust.soict.ict.aims.exception.PlayerException;
+
 public class Track implements Playable{
 	private String title;
 	private int length;
@@ -17,9 +19,13 @@ public class Track implements Playable{
 	}
 
 	@Override
-	public void play() {
-		System.out.println("Now playing track: " + this.getTitle());
-		System.out.println("Length: " + this.getLength());			
+	public void play() throws PlayerException {
+		if(this.getLength() > 0){
+			System.out.println("Now playing track: " + this.getTitle());
+			System.out.println("Length: " + this.getLength());			
+		}else{
+			throw new PlayerException("Track has no length");
+		}
 	}
 	
 	@Override
